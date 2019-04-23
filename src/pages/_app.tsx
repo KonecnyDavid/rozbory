@@ -4,8 +4,6 @@ import { Grid, Row, Col } from "react-styled-flexboxgrid";
 import { Menu, Advertisement } from "semantic-ui-react";
 import Header from "components/Header";
 import Link from "next/link";
-import { ThemeProvider } from "styled-components";
-import { themeConfig } from "../components/GlobalStyle/variables";
 import { GlobalStyle } from "../components/GlobalStyle/styles";
 import Footer from "../components/Footer/index";
 
@@ -25,10 +23,12 @@ class App extends NextApp {
               </Link>
             </Menu.Item>
             <Menu.Item>
-              <a href="">Rozbory</a>
+              <Link href="/rozbory">
+                <a>Rozbory</a>
+              </Link>
             </Menu.Item>
           </Menu>
-          <Grid>
+          <Grid className="main-content">
             <Row center="sm">
               <Col sm={12}>
                 <Advertisement unit="leaderboard" test="Leaderboard" />

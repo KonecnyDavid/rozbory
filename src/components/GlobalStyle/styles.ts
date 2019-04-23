@@ -12,6 +12,41 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0 auto ${outerMargin} !important;
   }
 
+  .main-content {
+    background: white;
+  }
+
+  .text {
+    &-nowrap {
+      white-space: nowrap !important;
+    }
+    &-left {
+      text-align: left !important;
+    }
+
+    &-center {
+      text-align: center !important;
+    }
+
+    &-right {
+      text-align: right !important;
+    }
+
+    &-normal {
+      font-size: 1rem;
+    }
+
+    &-gray {
+      color: rgba(0,0,0,.4);
+    }
+  }
+
+  .f {
+    &-right {
+      float: right;
+    }
+  }
+
   .d-block {
     display: block;
   }
