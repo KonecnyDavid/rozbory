@@ -24,6 +24,7 @@ const Title: React.FC<Props> = ({ book }) => (
         property="og:title"
         content={book.name + " (MaturitniRozbory.cz)"}
       />
+      <meta name="og:type" property="og:type" content={"article"} />
       <meta
         name="og:title"
         property="og:description"
