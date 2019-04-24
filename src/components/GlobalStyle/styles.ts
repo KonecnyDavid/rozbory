@@ -12,6 +12,10 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Open Sans', sans-serif !important;
   }
 
+  .ui.medium.rectangle{
+    margin-bottom: 1rem;
+  }
+
   .ad.leaderboard {
     margin: 0 auto ${outerMargin} !important;
   }

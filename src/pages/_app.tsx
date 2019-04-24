@@ -59,17 +59,13 @@ class App extends NextApp {
             </Menu.Item>
           </Menu>
           <Grid className="main-content">
-            <Row center="sm">
-              <Col sm={12}>
-                <Advertisement unit="leaderboard" test="Leaderboard" />
-              </Col>
-            </Row>
             <Row>
               <Col sm={12} md={9}>
                 <Component {...pageProps} />
               </Col>
               <Col sm={0} md={3}>
-                <Advertisement unit="half page" test="Half Page" />
+                <Advertisement unit="medium rectangle" test="Vaše reklama může být zde" />
+                <Advertisement unit="half page" test="Vaše reklama může být zde" />
               </Col>
             </Row>
           </Grid>
