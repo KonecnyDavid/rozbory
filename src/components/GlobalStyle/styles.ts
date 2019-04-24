@@ -8,6 +8,10 @@ import {
 
 export const GlobalStyle = createGlobalStyle`
 
+  * * * * * *{
+    font-family: 'Open Sans', sans-serif !important;
+  }
+
   .ad.leaderboard {
     margin: 0 auto ${outerMargin} !important;
   }
