@@ -9,7 +9,7 @@
     "next": "ts-node --project tsconfig.server.json server/index.ts",
     "lint": "yarn tslint -c tslint.json 'src/**/*.ts' --project tsconfig.json",
     "meta": "yarn ts-node --project tsconfig.server.json meta.ts",
-    "build": "yarn meta && yarn next build"
+    "build": "next build src"
   },
   "dependencies": {
     "@babel/core": "^7.4.3",
