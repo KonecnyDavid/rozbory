@@ -6,6 +6,13 @@ import Header from "components/Header";
 import Link from "next/link";
 import { GlobalStyle } from "../components/GlobalStyle/styles";
 import Footer from "../components/Footer/index";
+import Head from "next/head";
+
+/* <meta
+name="og:image"
+property="og:image"
+content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg"
+/> */
 
 class App extends NextApp {
   public render() {
@@ -13,6 +20,24 @@ class App extends NextApp {
 
     return (
       <>
+        <Head>
+          <title>MaturitniRozbory.cz</title>
+          <meta
+            name="description"
+            content="Projekt MaturitníRozbory.cz vyznikl za účelem vytvoření jednotného, intuitivního a kvalitního přehledu 
+            literárních děl k maturitě a nejen k ní. Veškeré rozbory obsahují všechny potřebné náležitosti ke 
+            státní maturitní zkoušce z Českého jazyka."
+          />
+
+          <meta property="og:title" content="MaturitniRozbory.cz" />
+          <meta
+            name="og:description"
+            property="og:description"
+            content="Projekt MaturitníRozbory.cz vyznikl za účelem vytvoření jednotného, intuitivního a kvalitního přehledu 
+            literárních děl k maturitě a nejen k ní. Veškeré rozbory obsahují všechny potřebné náležitosti ke 
+            státní maturitní zkoušce z Českého jazyka."
+          />
+        </Head>
         <GlobalStyle />
         <Container>
           <Menu secondary pointing>
