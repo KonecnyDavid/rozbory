@@ -16,8 +16,8 @@ interface State {
 class Rozbory extends React.Component<Props, State> {
   private static async getInitialProps({ req }: NextContext) {
     const host = req ? req.headers.host : window.location.host;
-    const protocol = "http:";
-    const books = await fetch(`${protocol}//${host}/api/meta`).then(r =>
+    const protocol = host!.includes("localhost") ? "http" : "https";
+    const books = await fetch(`${protocol}://${host}/api/meta`).then(r =>
       r.json()
     );
 
