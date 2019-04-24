@@ -9,7 +9,7 @@ interface Props {
 }
 
 const Title: React.FC<Props> = ({ book }) => (
-  <div className={"mt-n-3"}>
+  <div>
     <Head>
       <title>{book.name} - MaturitniRozbory.cz</title>
       <meta

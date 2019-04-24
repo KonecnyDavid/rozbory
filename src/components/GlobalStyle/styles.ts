@@ -12,6 +12,10 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Open Sans', sans-serif !important;
   }
 
+  .author-name{
+    margin-bottom: 0 !important;
+  }
+
   .ui.medium.rectangle{
     margin-bottom: 1rem;
   }
