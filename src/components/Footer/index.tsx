@@ -1,11 +1,17 @@
 import * as React from "react";
 import { StyledFooter } from "./styles";
 import { Divider } from "semantic-ui-react";
+import Link from "next/link";
 
 const Footer: React.FC = () => (
   <StyledFooter>
     <Divider />
-    Lorem ipsum dolor sit amet
+    david@konecny.eu | denis@homolik.cz
+    <span className="f-right">
+      <Link href="/reklama">
+        <a>Reklama</a>
+      </Link>
+    </span>
   </StyledFooter>
 );
 

@@ -19,12 +19,17 @@ class App extends NextApp {
             <Header />
             <Menu.Item>
               <Link href="/">
-                <a>Úvod</a>
+                <a>Rozbory</a>
               </Link>
             </Menu.Item>
             <Menu.Item>
-              <Link href="/rozbory">
-                <a>Rozbory</a>
+              <Link href="/autori">
+                <a>Autoři</a>
+              </Link>
+            </Menu.Item>
+            <Menu.Item>
+              <Link href="/lit-smery">
+                <a>Lit. směry</a>
               </Link>
             </Menu.Item>
           </Menu>

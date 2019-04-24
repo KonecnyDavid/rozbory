@@ -9,14 +9,19 @@ import { ServerStyleSheet } from "styled-components";
 
 class Document extends NextDocument<{
   styleTags: Array<React.ReactElement<{}>>;
+  local: boolean;
 }> {
-  public static async getInitialProps({ renderPage }: NextDocumentContext) {
+  public static async getInitialProps({
+    renderPage,
+    req
+  }: NextDocumentContext) {
     const sheet = new ServerStyleSheet();
     const page = renderPage(App => props =>
       sheet.collectStyles(<App {...props} />)
     );
+    const host = req ? req.headers.host : window.location.host;
     const styleTags = sheet.getStyleElement();
-    return { ...page, styleTags };
+    return { ...page, styleTags, local: host!.includes("localhost") };
   }
 
   public render() {
@@ -32,6 +37,21 @@ class Document extends NextDocument<{
         <body>
           <Main />
           <NextScript />
+          {!this.props.local && (
+            <>
+              <script
+                async
+                src="https://www.googletagmanager.com/gtag/js?id=UA-127890496-1"
+              />
+              <script>
+                {`window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-127890496-1');`}
+              </script>
+            </>
+          )}
         </body>
       </html>
     );

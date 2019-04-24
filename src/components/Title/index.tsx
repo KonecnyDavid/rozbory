@@ -9,7 +9,7 @@ interface Props {
 
 const Title: React.FC<Props> = ({ book }) => (
   <div className={"mt-n-3"}>
-    <Link href="/rozbory" passHref>
+    <Link href="/" passHref>
       <Button as="a">Zpět</Button>
     </Link>
     <h1>{book.name}</h1>

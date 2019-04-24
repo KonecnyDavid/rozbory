@@ -31,7 +31,7 @@ class Rozbory extends React.Component<Props, State> {
       <div>
         <h2>Vyhledávat rozbory</h2>
         <Input
-          placeholder="Název knihy,autor, druh, žánr"
+          placeholder="Název knihy, autor, druh, žánr"
           fluid
           onChange={e => this.setState({ input: e.target.value })}
         />
