@@ -127,6 +127,22 @@ export const GlobalStyle = createGlobalStyle`
     margin-top: ${outerMargin};
   }
 
+  .mt-n-1 {
+    margin-top: -${outerMarginSmHalf};
+  }
+
+  .mt-n-2 {
+    margin-top: -${outerMarginSm};
+  }
+
+  .mt-n-3 {
+    margin-top: -${outerMargin};
+  }
+
+  .mt-n-4 {
+    margin-top: -${outerMarginDouble};
+  }
+
   .pl-0 {
     padding-left: 0 !important;
   }

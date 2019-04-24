@@ -1,10 +1,9 @@
 import * as React from "react";
+import fetch from "isomorphic-unfetch";
 import { Input, Card } from "semantic-ui-react";
 import { BookType } from "../types/book";
-let fs: any;
-if (!(process as any).browser) {
-  fs = require("fs");
-}
+import { NextContext } from "next";
+import Link from "next/link";
 
 interface Props {
   books: BookType[];
@@ -15,12 +14,12 @@ interface State {
 }
 
 class Rozbory extends React.Component<Props, State> {
-  private static async getInitialProps() {
-    const books: BookType[] = [];
-    await fs.readdirSync("./src/pages/rozbor").map((f: string) => {
-      const file = require("./rozbor/" + f);
-      books.push(file.book);
-    });
+  private static async getInitialProps({ req }: NextContext) {
+    const host = req ? req.headers.host : window.location.host;
+    const protocol = "http:";
+    const books = await fetch(`${protocol}//${host}/api/meta`).then(r =>
+      r.json()
+    );
 
     return { books };
   }
@@ -36,19 +35,25 @@ class Rozbory extends React.Component<Props, State> {
           fluid
           onChange={e => this.setState({ input: e.target.value })}
         />
-        {this.props.books.filter(this.filter).map(b => (
-          <Card key={b.name} header={b.name} meta={b.author} fluid>
-            <Card.Content>
-              <Card.Header>
-                {b.name}
-                <span className="f-right text-normal text-gray">
-                  {b.type}; {b.genre}
-                </span>
-              </Card.Header>
-              <Card.Meta>{b.author}</Card.Meta>
-            </Card.Content>
-          </Card>
-        ))}
+        <div className="mt-1">
+          {this.props.books.filter(this.filter).map(b => (
+            <Link href={"rozbor/" + b.meta.url} key={b.name}>
+              <a>
+                <Card fluid>
+                  <Card.Content>
+                    <Card.Header>
+                      {b.name}
+                      <span className="f-right text-normal text-gray">
+                        {b.type}; {b.genre}
+                      </span>
+                    </Card.Header>
+                    <Card.Meta>{b.author}</Card.Meta>
+                  </Card.Content>
+                </Card>
+              </a>
+            </Link>
+          ))}
+        </div>
       </div>
     );
   }

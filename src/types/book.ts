@@ -12,4 +12,11 @@ export interface BookType {
   narratorNote?: string;
   composition: "Chronologická" | "Retrospektivní";
   compositionNote?: string;
-};
+
+  meta: {
+    file: string;
+    url: string;
+    updated: string;
+    created: string;
+  };
+}
