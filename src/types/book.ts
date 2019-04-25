@@ -8,10 +8,17 @@ export interface BookType {
   theme: string;
   motives: string;
   timespace: string;
-  narrator: "Ich" | "Er";
-  narratorNote?: string;
   composition: "Chronologická" | "Retrospektivní";
   compositionNote?: string;
+
+  narrator: "Ich" | "Er" | "Lyrický subjekt";
+  narratorNote?: string;
+  tellingMeans: string;
+  speechType: string;
+  verse?: string;
+
+  lexMeans: string;
+  figures: string;
 
   meta: {
     file: string;

@@ -7,7 +7,22 @@ interface Props {
 }
 
 const Book: React.FC<Props> = ({
-  book: { type, genre, theme, motives, timespace, narrator, narratorNote }
+  book: {
+    type,
+    genre,
+    theme,
+    motives,
+    timespace,
+    narrator,
+    narratorNote,
+    composition,
+    compositionNote,
+    tellingMeans,
+    speechType,
+    verse,
+    lexMeans,
+    figures
+  }
 }) => {
   return (
     <Table basic="very" celled collapsing>
@@ -37,6 +52,13 @@ const Book: React.FC<Props> = ({
           <Table.Cell singleLine>Časoprostor:</Table.Cell>
           <Table.Cell>{timespace}</Table.Cell>
         </Table.Row>
+        <Table.Row>
+          <Table.Cell singleLine>Kompoziční výstavba:</Table.Cell>
+          <Table.Cell>
+            <strong>{composition}</strong>
+            <br /> {compositionNote}
+          </Table.Cell>
+        </Table.Row>
       </Table.Body>
       <Table.Header>
         <Table.Row>
@@ -55,16 +77,18 @@ const Book: React.FC<Props> = ({
         </Table.Row>
         <Table.Row>
           <Table.Cell singleLine>Vyprávěcí způsoby:</Table.Cell>
-          <Table.Cell>...</Table.Cell>
+          <Table.Cell>{tellingMeans}</Table.Cell>
         </Table.Row>
         <Table.Row>
           <Table.Cell singleLine>Typy promluv:</Table.Cell>
-          <Table.Cell>...</Table.Cell>
+          <Table.Cell>{speechType}</Table.Cell>
         </Table.Row>
-        <Table.Row>
-          <Table.Cell singleLine>Veršová výstavba:</Table.Cell>
-          <Table.Cell>...</Table.Cell>
-        </Table.Row>
+        {verse && (
+          <Table.Row>
+            <Table.Cell singleLine>Veršová výstavba:</Table.Cell>
+            <Table.Cell>{verse}</Table.Cell>
+          </Table.Row>
+        )}
       </Table.Body>
       <Table.Header>
         <Table.Row>
@@ -76,11 +100,11 @@ const Book: React.FC<Props> = ({
       <Table.Body>
         <Table.Row>
           <Table.Cell singleLine>Jazykové prostředky:</Table.Cell>
-          <Table.Cell>...</Table.Cell>
+          <Table.Cell>{lexMeans}</Table.Cell>
         </Table.Row>
         <Table.Row>
           <Table.Cell singleLine>Tropy a figury:</Table.Cell>
-          <Table.Cell>...</Table.Cell>
+          <Table.Cell>{figures}</Table.Cell>
         </Table.Row>
       </Table.Body>
     </Table>

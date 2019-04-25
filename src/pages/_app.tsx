@@ -1,12 +1,13 @@
 import NextApp, { Container } from "next/app";
 import * as React from "react";
 import { Grid, Row, Col } from "react-styled-flexboxgrid";
-import { Menu, Advertisement } from "semantic-ui-react";
+import { Menu } from "semantic-ui-react";
 import Header from "components/Header";
 import Link from "next/link";
 import { GlobalStyle } from "../components/GlobalStyle/styles";
 import Footer from "../components/Footer/index";
 import Head from "next/head";
+import Advertisement from "../components/Advertisement/index";
 
 class App extends NextApp {
   public render() {
@@ -58,12 +59,12 @@ class App extends NextApp {
           </Menu>
           <Grid className="main-content">
             <Row>
-              <Col sm={12} md={9}>
+              <Col xs={12} md={9}>
                 <Component {...pageProps} />
               </Col>
-              <Col sm={0} md={3}>
-                <Advertisement unit="medium rectangle" test="Vaše reklama může být zde" />
-                <Advertisement unit="half page" test="Vaše reklama může být zde" />
+              <Col xs={12} md={3} className="advertisement-block">
+                <Advertisement src="/static/reklama_320x640.png" />
+                <Advertisement src="/static/reklama_320x320.png" />
               </Col>
             </Row>
           </Grid>
