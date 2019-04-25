@@ -3,13 +3,14 @@ import { BookType } from "types/book";
 import { Button } from "semantic-ui-react";
 import Link from "next/link";
 import Head from "next/head";
+import { StyledTitle } from "./styles";
 
 interface Props {
   book: BookType;
 }
 
 const Title: React.FC<Props> = ({ book }) => (
-  <div>
+  <StyledTitle>
     <Head>
       <title>{book.name} - MaturitniRozbory.cz</title>
       <meta
@@ -38,7 +39,7 @@ const Title: React.FC<Props> = ({ book }) => (
     </Link>
     <h1>{book.name}</h1>
     <h2>{book.author}</h2>
-  </div>
+  </StyledTitle>
 );
 
 export default Title;

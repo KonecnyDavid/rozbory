@@ -28,10 +28,6 @@ export const GlobalStyle = createGlobalStyle`
     background: white;
   }
 
-  .advertisement-block{
-  
-  }
-
   .text {
     &-nowrap {
       white-space: nowrap !important;
