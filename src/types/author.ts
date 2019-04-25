@@ -6,5 +6,6 @@ export interface AuthorType {
   nationality: FlagNameValues;
   life?: string;
   description?: string;
+  more: string[];
   wikiTitle: string;
 }

@@ -3,36 +3,22 @@ import { AuthorType } from "types/author";
 import { Header, Flag, Card, List } from "semantic-ui-react";
 import fetch from "isomorphic-unfetch";
 import Image from "components/Image";
-import { StyledAuthorCard } from "./styles";
 import * as meta from "../../../meta.json";
 import { withRouter, WithRouterProps } from "next/router";
+import { WikiSummary } from "types/wiki";
+import Link from "next/link";
+import { StyledSideCard } from "../SideCard/styles";
 
 interface Props {
   author: AuthorType;
   wikiText?: boolean;
-}
-
-interface WikiSummary {
-  title: string;
-  displaytitle: string;
-  extract: string;
-  thumbnail: {
-    source: string;
-    width: number;
-    height: number;
-  };
-  originalimage: {
-    source: string;
-    width: number;
-    height: number;
-  };
-  lang: string;
-  description: string;
+  hideSource?: boolean;
 }
 
 const AuthorComponent: React.FC<Props & WithRouterProps> = ({
   author: { name, nationality, life, wikiTitle },
   wikiText,
+  hideSource,
   router
 }) => {
   const books = meta.books.filter(
@@ -53,7 +39,7 @@ const AuthorComponent: React.FC<Props & WithRouterProps> = ({
       <Header className="author-name mb-1" as="h2">
         Autor
       </Header>
-      <StyledAuthorCard className="f-right">
+      <StyledSideCard className="f-right">
         <Card.Content className="text-center">
           <Image
             width={200}
@@ -73,7 +59,11 @@ const AuthorComponent: React.FC<Props & WithRouterProps> = ({
               <strong>Další díla:</strong>
               <List className="mt-0">
                 {books.map(b => (
-                  <List.Item key={b.meta.file}>{b.name}</List.Item>
+                  <List.Item key={b.meta.file}>
+                    <Link href={"/rozbor/" + b.meta.url}>
+                      <a>{b.name}</a>
+                    </Link>
+                  </List.Item>
                 ))}
               </List>
             </Card.Description>
@@ -91,8 +81,13 @@ const AuthorComponent: React.FC<Props & WithRouterProps> = ({
             </small>
           </Card.Meta>
         </Card.Content>
-      </StyledAuthorCard>
-      {wikiText && <p>{data ? data.extract : "    "}</p>}
+      </StyledSideCard>
+      {wikiText && (
+        <p>
+          {data && data.extract}{" "}
+          {!hideSource && <i className="text-gray"> (Wikipedie)</i>}
+        </p>
+      )}
     </>
   );
 };

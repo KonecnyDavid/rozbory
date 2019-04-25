@@ -16,6 +16,10 @@ export const GlobalStyle = createGlobalStyle`
     margin-bottom: 0 !important;
   }
 
+  .clear-fix {
+    clear: both;
+  }
+
   .ui.medium.rectangle{
     margin-bottom: 1rem;
   }

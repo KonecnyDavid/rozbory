@@ -102,10 +102,10 @@ const Book: React.FC<Props> = ({
           <Table.Cell singleLine>Jazykové prostředky:</Table.Cell>
           <Table.Cell>{lexMeans}</Table.Cell>
         </Table.Row>
-        <Table.Row>
+        {/* <Table.Row>
           <Table.Cell singleLine>Tropy a figury:</Table.Cell>
           <Table.Cell>{figures}</Table.Cell>
-        </Table.Row>
+        </Table.Row> */}
       </Table.Body>
     </Table>
   );

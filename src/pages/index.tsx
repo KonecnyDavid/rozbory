@@ -52,12 +52,12 @@ class Rozbory extends React.Component<{}, State> {
     meta.authors.find(a => a.wikiTitle === title);
 
   private filter = ({ name, author, genre, type }: BookType) => {
-    const i = this.state.input;
+    const i = this.state.input.toLowerCase();
     return (
-      name.includes(i) ||
-      author.includes(i) ||
-      genre.includes(i) ||
-      type.includes(i)
+      name.toLowerCase().includes(i) ||
+      author.toLowerCase().includes(i) ||
+      genre.toLowerCase().includes(i) ||
+      type.toLowerCase().includes(i)
     );
   };
 }
