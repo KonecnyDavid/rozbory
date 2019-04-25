@@ -127,6 +127,10 @@ export const GlobalStyle = createGlobalStyle`
     margin-right: ${outerMargin} !important;
   }
 
+  .mt-0 {
+    margin-top: 0 !important;
+  }
+
   .mt-1 {
     margin-top: ${outerMarginSmHalf} !important;
   }

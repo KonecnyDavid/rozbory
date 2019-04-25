@@ -1,32 +1,18 @@
 import * as React from "react";
-import fetch from "isomorphic-unfetch";
 import { Input, Card } from "semantic-ui-react";
 import { BookType } from "../types/book";
-import { NextContext } from "next";
 import Link from "next/link";
-
-interface Props {
-  books: BookType[];
-}
+import * as meta from "../../meta.json";
 
 interface State {
   input: string;
 }
 
-class Rozbory extends React.Component<Props, State> {
-  private static async getInitialProps({ req }: NextContext) {
-    const host = req ? req.headers.host : window.location.host;
-    const protocol = host!.includes("localhost") ? "http" : "https";
-    const books = await fetch(`${protocol}://${host}/api/meta`).then(r =>
-      r.json()
-    );
-
-    return { books };
-  }
-
+class Rozbory extends React.Component<{}, State> {
   public state: State = { input: "" };
 
   public render() {
+    const { books } = meta;
     return (
       <div>
         <h2>Vyhledávat rozbory</h2>
@@ -36,7 +22,7 @@ class Rozbory extends React.Component<Props, State> {
           onChange={e => this.setState({ input: e.target.value })}
         />
         <div className="mt-1">
-          {this.props.books.filter(this.filter).map(b => (
+          {books.filter(this.filter as any).map(b => (
             <Link href={"rozbor/" + b.meta.url} key={b.name}>
               <a>
                 <Card fluid>
@@ -47,7 +33,11 @@ class Rozbory extends React.Component<Props, State> {
                         {b.type}; {b.genre}
                       </span>
                     </Card.Header>
-                    <Card.Meta>{b.author}</Card.Meta>
+                    <Card.Meta>
+                      {this.getAuthor(b.author)
+                        ? this.getAuthor(b.author)!.name
+                        : b.author}
+                    </Card.Meta>
                   </Card.Content>
                 </Card>
               </a>
@@ -57,6 +47,9 @@ class Rozbory extends React.Component<Props, State> {
       </div>
     );
   }
+
+  private getAuthor = (title: string) =>
+    meta.authors.find(a => a.wikiTitle === title);
 
   private filter = ({ name, author, genre, type }: BookType) => {
     const i = this.state.input;

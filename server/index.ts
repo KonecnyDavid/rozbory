@@ -13,7 +13,7 @@ const handler = app.getRequestHandler();
 app.prepare().then(() => {
   express()
     .use(compression())
-    .get("/api*", (req, res) => api(req, res))
+    // .get("/api*", (req, res) => api(req, res))
     .use((req, res) => handler(req, res))
     .addListener("error", () => (err: Error) => {
       console.log(err);
