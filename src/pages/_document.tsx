@@ -10,6 +10,7 @@ import { ServerStyleSheet } from "styled-components";
 class Document extends NextDocument<{
   styleTags: Array<React.ReactElement<{}>>;
   local: boolean;
+  url: string;
 }> {
   public static async getInitialProps({
     renderPage,
@@ -21,7 +22,12 @@ class Document extends NextDocument<{
     );
     const host = req ? req.headers.host : window.location.host;
     const styleTags = sheet.getStyleElement();
-    return { ...page, styleTags, local: host!.includes("localhost") };
+    return {
+      ...page,
+      styleTags,
+      local: host!.includes("localhost"),
+      url: req!.url
+    };
   }
 
   public render() {
@@ -32,6 +38,11 @@ class Document extends NextDocument<{
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
+          />
+          <meta
+            name="og:url"
+            property="og:url"
+            content={"https://maturitnirozbory.cz" + this.props.url}
           />
           <link
             rel="stylesheet"

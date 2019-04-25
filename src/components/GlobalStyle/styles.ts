@@ -84,11 +84,11 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .mb-0 {
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
   }
 
   .mb-1 {
-    margin-bottom: ${outerMarginSmHalf};
+    margin-bottom: ${outerMarginSmHalf} !important;
   }
 
   .mb-2 {
@@ -96,55 +96,55 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .mb-3 {
-    margin-bottom: ${outerMargin};
+    margin-bottom: ${outerMargin} !important;
   }
 
   .mb-4 {
-    margin-bottom: 4rem;
+    margin-bottom: 4rem !important;
   }
 
   .mb-6 {
-    margin-bottom: ${outerMarginDouble};
+    margin-bottom: ${outerMarginDouble} !important;
   }
 
   .ml-1 {
-    margin-left: ${outerMarginSmHalf};
+    margin-left: ${outerMarginSmHalf} !important;
   }
 
   .ml-2 {
-    margin-left: ${outerMarginSm};
+    margin-left: ${outerMarginSm} !important;
   }
 
   .ml-3 {
-    margin-left: ${outerMargin};
+    margin-left: ${outerMargin} !important;
   }
 
   .mr-1 {
-    margin-right: ${outerMarginSmHalf};
+    margin-right: ${outerMarginSmHalf} !important;
   }
 
   .mr-2 {
-    margin-right: ${outerMarginSm};
+    margin-right: ${outerMarginSm} !important;
   }
 
   .mr-3 {
-    margin-right: ${outerMargin};
+    margin-right: ${outerMargin} !important;
   }
 
   .mt-1 {
-    margin-top: ${outerMarginSmHalf};
+    margin-top: ${outerMarginSmHalf} !important;
   }
 
   .mt-2 {
-    margin-top: ${outerMarginSm};
+    margin-top: ${outerMarginSm} !important;
   }
 
   .mt-3 {
-    margin-top: ${outerMargin};
+    margin-top: ${outerMargin} !important;
   }
 
   .mt-n-1 {
-    margin-top: -${outerMarginSmHalf};
+    margin-top: -${outerMarginSmHalf} !important;
   }
 
   .mt-n-2 {
