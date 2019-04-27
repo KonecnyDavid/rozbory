@@ -40,9 +40,9 @@ const Title: React.FC<Props> = ({ book }) => {
         <meta
           name="og:title"
           property="og:description"
-          content={`Autor: ${book.author} | Žánr: ${book.genre} | ${
-            book.timespace
-          }`}
+          content={`Autor: ${author ? author.name : book.author} | Žánr: ${
+            book.genre
+          } | ${book.timespace}`}
         />
       </Head>
       <Link href="/" passHref>
