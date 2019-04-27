@@ -12,6 +12,11 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Open Sans', sans-serif !important;
   }
 
+  @media print { 
+    /* All your print styles go here */
+    .ui.menu, .ui.button, .ads { display: none !important; } 
+  }
+
   .author-name{
     margin-bottom: 0 !important;
   }

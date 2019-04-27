@@ -9,4 +9,8 @@ export const StyledFooter = styled.div`
   margin-top: ${outerMarginDouble};
   padding: ${innerPaddingHalf};
   color: black;
+
+  @media print { 
+    display: none !important;
+  }
 `;
