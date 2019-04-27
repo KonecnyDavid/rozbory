@@ -28,7 +28,11 @@ class App extends NextApp {
             property="og:image"
             content="https://maturitnirozbory.cz/static/rozbor/Default.jpg"
           />
-          <meta property="og:title" content="MaturitniRozbory.cz" />
+          <meta
+            name="og:title"
+            property="og:title"
+            content="MaturitniRozbory.cz"
+          />
           <meta
             name="og:description"
             property="og:description"
@@ -68,7 +72,7 @@ class App extends NextApp {
               </Col>
             </Row>
           </Grid>
-          <Footer/>
+          <Footer />
         </Container>
       </>
     );
