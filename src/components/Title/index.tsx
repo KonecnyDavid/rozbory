@@ -38,9 +38,9 @@ const Title: React.FC<Props> = ({ book }) => {
         />
         <meta name="og:type" property="og:type" content={"article"} />
         <meta
-          name="og:title"
+          name="og:description"
           property="og:description"
-          content={`Autor: ${author ? author.name : book.author} | Žánr: ${
+          content={`Autor: ${author ? author.name : book.author}   | Žánr: ${
             book.genre
           } | ${book.timespace}`}
         />
