@@ -4,7 +4,6 @@ import * as requireFromString from "require-from-string";
 import { promisify } from "util";
 import { parse } from "path";
 import { MetaData } from "./src/types/meta";
-import console = require("console");
 const mdx = require("remark-mdx");
 const remark = require("remark");
 const { read } = require("to-vfile");
@@ -69,6 +68,6 @@ const main = async () => {
   await Promise.all(books);
   await Promise.all(authors);
 
-  writeFile("meta.json", JSON.stringify(meta));
+  await writeFile("meta.json", JSON.stringify(meta));
 };
 main();
