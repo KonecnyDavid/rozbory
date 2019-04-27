@@ -40,6 +40,9 @@ const Title: React.FC<Props> = ({ book }) => {
       <Link href="/" passHref>
         <Button as="a">Zpět</Button>
       </Link>
+      <p className="sign text-gray">
+        <i>MaturitniRozbory.cz</i>
+      </p>
       <h1>{book.name}</h1>
       <h2>{author ? author.name : book.author}</h2>
     </StyledTitle>

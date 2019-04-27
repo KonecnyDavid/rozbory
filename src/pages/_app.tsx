@@ -62,7 +62,7 @@ class App extends NextApp {
               <Col xs={12} md={9}>
                 <Component {...pageProps} />
               </Col>
-              <Col xs={12} md={3} className="ads">
+              <Col xs={12} md={3} className="sidebar">
                 <Advertisement src="/static/re_img_320x640.png" />
                 <Advertisement src="/static/re_img_320x320.png" />
               </Col>

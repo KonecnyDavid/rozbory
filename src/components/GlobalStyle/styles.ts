@@ -5,6 +5,7 @@ import {
   outerMarginDouble,
   outerMargin
 } from "./variables";
+import { Row, Col } from "react-styled-flexboxgrid";
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -14,7 +15,32 @@ export const GlobalStyle = createGlobalStyle`
 
   @media print { 
     /* All your print styles go here */
-    .ui.menu, .ui.button, .ads { display: none !important; } 
+    .ui.menu, .ui.button, .sidebar { display: none !important; } 
+
+    body {
+      width: 100vw;
+      word-break: normal !important;
+    }
+
+    ${Row}, ${Col} {
+      width: 100%;
+      display: block;
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+
+    p {
+      break-inside: avoid;
+    }
+
+    h1,h2,h3,h4,h5,h6 {
+      break-after: avoid;
+    }
+
+    .basic.table td {
+      padding: .5em;
+      font-size: .8em;
+    }
   }
 
   .author-name{

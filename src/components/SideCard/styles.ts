@@ -14,4 +14,8 @@ export const StyledSideCard = styled(Card)`
     margin-left: 0.2em;
     margin-right: -0.2em;
   }
+
+  @media print {
+    break-inside: avoid;
+  }
 `;
