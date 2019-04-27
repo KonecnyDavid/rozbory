@@ -26,6 +26,10 @@ const Footer: React.FC = () => (
             <Link href="/reklama">
               <a>Reklama</a>
             </Link>
+            |
+            <Link href="/zdroje">
+              <a>Zdroje</a>
+            </Link>
           </span>
         </Col>
       </Row>
