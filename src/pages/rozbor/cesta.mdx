@@ -1,0 +1,35 @@
+import { Book, Title } from "components";
+import UnknownAuthor from "components/Author/Authors/UnknownAuthor.mdx";
+import GeneralDirection from "components/Direction/Directions/GeneralDirection.mdx";
+
+export const book = {
+  name: "Testovací kniha",
+  author: "Neznámý autor",
+  released: 0,
+  type: "Lyrika",
+  genre: "Román",
+  theme: "Knihy",
+  motives: "Knihy",
+  timespace: "Někde, někdy",
+  composition: "Chronologická",
+  compositionNote: "Prvky retrospektivy",
+  narrator: "Ich",
+  narratorNote: "neco",
+  tellingMeans: "neco",
+  speechType: "neco",
+  verse: "neco",
+  lexMeans: "string",
+  figures: "string",
+} 
+
+<Title book={book} />
+
+<Book book={book} />
+
+## Postavy
+
+## Děj
+
+<UnknownAuthor />
+
+<GeneralDirection />
