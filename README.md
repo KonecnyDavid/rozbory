@@ -1,1 +1,1 @@
-# ![Logo](/src/static/open-book.png) MaturitniRoybory.cz
+# ![Logo](/src/static/open-book.png) MaturitniRozbory.cz
