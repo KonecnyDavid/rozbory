@@ -26,7 +26,7 @@ class App extends NextApp {
           <meta
             name="og:image"
             property="og:image"
-            content="https://maturitnirozbory.cz/static/background.jpg"
+            content="https://maturitnirozbory.cz/static/rozbor/Default.jpg"
           />
           <meta property="og:title" content="MaturitniRozbory.cz" />
           <meta

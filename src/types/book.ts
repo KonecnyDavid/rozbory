@@ -1,6 +1,7 @@
 export interface BookType {
   name: string;
   author: string;
+  image?: string;
 
   released: number;
   type: "Lyrika" | "Epika" | "Drama" | "Lyricko-epický";

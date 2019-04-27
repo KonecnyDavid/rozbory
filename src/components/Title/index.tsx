@@ -18,10 +18,18 @@ const Title: React.FC<Props> = ({ book }) => {
         <title>{book.name} - MaturitniRozbory.cz</title>
         <meta
           name="description"
-          content={`Autor: ${book.author} | Žánr: ${book.genre} | ${
-            book.timespace
-          }`}
+          content={`Autor: ${author ? author.name : book.author} | Žánr: ${
+            book.genre
+          } | ${book.timespace}`}
         />
+
+        {book.image && (
+          <meta
+            name="og:image"
+            property="og:image"
+            content={"https://maturitnirozbory.cz/static/rozbor/" + book.image}
+          />
+        )}
 
         <meta
           name="og:title"
