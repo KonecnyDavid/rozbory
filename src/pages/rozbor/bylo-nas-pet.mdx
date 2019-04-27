@@ -1,0 +1,33 @@
+import { Book, Title } from "components";
+import KarelPolacek from "components/Author/Authors/KarelPolacek.mdx";
+import GeneralDirection from "components/Direction/Directions/GeneralDirection.mdx";
+
+export const book = {
+  name: "Bylo nás pět",
+  author: "Karel Poláček",
+  released: 1946,
+  type: "Epika",
+  genre: "Román",
+  theme: "Příběhy pětice kamarádů, kteří spolu zažívají různá dobrodružství. Snaží se zobrazit svět dospělých dětskýma očima.",
+  motives: "Dětství, dobrodružství, škola, přátelství, svět dospělých zobrazený dětskýma očima, homor",
+  timespace: "počátek 20. Století, po 1. světové válce, Rychnov nad Kněžnou",
+  composition: "Chronologická",
+  compositionNote: "Děj není členěn na kapitoly ale pouze na oddíly, které jsou graficky odděleny. Reálné vjemy jsou prokládány sněním.",
+  narrator: "Ich",
+  narratorNote: "Vypravěčem je hlavní postava Petr Bajza.",
+  tellingMeans: "Vyprávěcí, popisný",
+  speechType: "Přímá řeč, monology, dialogy, myšlenkové pochody",
+  lexMeans: "Spisovná i nespisovná čeština, hovorové prvky a nářečí, slang, knižní výrazy, zkomolenininy, expresivní výrazy, germanismy",
+} 
+
+<Title book={book} />
+
+<Book book={book} />
+
+## Postavy
+
+## Děj
+
+<KarelPolacek />
+
+<GeneralDirection />
