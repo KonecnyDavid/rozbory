@@ -63,13 +63,15 @@ class Document extends NextDocument<{
                 async
                 src="https://www.googletagmanager.com/gtag/js?id=UA-127890496-1"
               />
-              <script>
-                {`window.dataLayer = window.dataLayer || [];
+              <script
+                dangerouslySetInnerHTML={{
+                  __html: `window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            gtag('config', 'UA-127890496-1');`}
-              </script>
+            gtag('config', 'UA-127890496-1');`
+                }}
+              />
             </>
           )}
         </body>
