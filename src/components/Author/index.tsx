@@ -16,7 +16,7 @@ interface Props {
 }
 
 const AuthorComponent: React.FC<Props & WithRouterProps> = ({
-  author: { name, nationality, life, wikiTitle },
+  author: { name, nationality, life, wikiTitle, more },
   wikiText,
   hideSource,
   router
@@ -25,6 +25,8 @@ const AuthorComponent: React.FC<Props & WithRouterProps> = ({
     b =>
       b.author === wikiTitle && b.meta.url !== router!.pathname.split("/").pop()
   );
+
+  // TODO: Remove duplicities in more books
 
   const [data, setData] = React.useState<WikiSummary>();
   React.useEffect(() => {
@@ -54,20 +56,24 @@ const AuthorComponent: React.FC<Props & WithRouterProps> = ({
             {life}
           </small>
 
-          {books.length !== 0 && (
-            <Card.Description className="mt-1 mb-1">
-              <strong>Další díla:</strong>
-              <List className="mt-0">
-                {books.map(b => (
-                  <List.Item key={b.meta.file}>
-                    <Link href={"/rozbor/" + b.meta.url}>
-                      <a>{b.name}</a>
-                    </Link>
-                  </List.Item>
-                ))}
-              </List>
-            </Card.Description>
-          )}
+          {books.length !== 0 ||
+            (more.length !== 0 && (
+              <Card.Description className="mt-1 mb-1">
+                <strong>Další díla:</strong>
+                <List className="mt-0">
+                  {books.length !== 0 &&
+                    books.map(b => (
+                      <List.Item key={b.meta.file}>
+                        <Link href={"/rozbor/" + b.meta.url}>
+                          <a>{b.name}</a>
+                        </Link>
+                      </List.Item>
+                    ))}
+                  {more.length !== 0 &&
+                    more.map(b => <List.Item key={b}>{b}</List.Item>)}
+                </List>
+              </Card.Description>
+            ))}
 
           <Card.Meta className="text-right source">
             <small>

@@ -9,8 +9,8 @@ const Footer: React.FC = () => (
     <Divider />
     <Grid fluid>
       <Row>
-        <Col xs={4}>david@konecny.eu | denis@homolik.cz</Col>
-        <Col xs={4} className="text-center">
+        <Col xs={12} md={4}>david@konecny.eu | denis@homolik.cz</Col>
+        <Col xs={12} md={4} className="text-center">
           <small className="text-gray">
             Text je dostupný pod licencí{" "}
             <a
@@ -21,7 +21,7 @@ const Footer: React.FC = () => (
             </a>
           </small>
         </Col>
-        <Col xs={4}>
+        <Col xs={12} md={4}>
           <span className="f-right">
             <Link href="/reklama">
               <a>Reklama</a>

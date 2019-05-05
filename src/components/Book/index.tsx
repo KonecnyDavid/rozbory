@@ -43,10 +43,12 @@ const Book: React.FC<Props> = ({
           <Table.Cell>{genre}</Table.Cell>
         </Table.Row>
         <Table.Row>
-          <Table.Cell singleLine>Téma a motiv:</Table.Cell>
-          <Table.Cell>
-            {theme} <br /> {motives}
-          </Table.Cell>
+          <Table.Cell singleLine>Téma:</Table.Cell>
+          <Table.Cell>{theme}</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Cell singleLine>Motiv:</Table.Cell>
+          <Table.Cell>{motives}</Table.Cell>
         </Table.Row>
         <Table.Row>
           <Table.Cell singleLine>Časoprostor:</Table.Cell>
@@ -75,14 +77,18 @@ const Book: React.FC<Props> = ({
             <br /> {narratorNote}
           </Table.Cell>
         </Table.Row>
-        <Table.Row>
-          <Table.Cell singleLine>Vyprávěcí způsoby:</Table.Cell>
-          <Table.Cell>{tellingMeans}</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell singleLine>Typy promluv:</Table.Cell>
-          <Table.Cell>{speechType}</Table.Cell>
-        </Table.Row>
+        {tellingMeans && (
+          <Table.Row>
+            <Table.Cell singleLine>Vyprávěcí způsoby:</Table.Cell>
+            <Table.Cell>{tellingMeans}</Table.Cell>
+          </Table.Row>
+        )}
+        {speechType && (
+          <Table.Row>
+            <Table.Cell singleLine>Typy promluv:</Table.Cell>
+            <Table.Cell>{speechType}</Table.Cell>
+          </Table.Row>
+        )}
         {verse && (
           <Table.Row>
             <Table.Cell singleLine>Veršová výstavba:</Table.Cell>

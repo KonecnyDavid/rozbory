@@ -9,13 +9,13 @@ export interface BookType {
   theme: string;
   motives: string;
   timespace: string;
-  composition: "Chronologická" | "Retrospektivní";
+  composition: "Chronologická" | "Retrospektivní" | "Rámcová";
   compositionNote?: string;
 
   narrator: "Ich" | "Er" | "Lyrický subjekt";
   narratorNote?: string;
-  tellingMeans: string;
-  speechType: string;
+  tellingMeans?: string;
+  speechType?: string;
   verse?: string;
 
   lexMeans: string;

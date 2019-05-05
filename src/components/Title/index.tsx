@@ -1,6 +1,6 @@
 import * as React from "react";
 import { BookType } from "types/book";
-import { Button } from "semantic-ui-react";
+import { Button, Icon } from "semantic-ui-react";
 import Link from "next/link";
 import Head from "next/head";
 import { StyledTitle } from "./styles";
@@ -48,10 +48,14 @@ const Title: React.FC<Props> = ({ book }) => {
       <Link href="/" passHref>
         <Button as="a">Zpět</Button>
       </Link>
+      <Button basic onClick={() => window.print()}>Tisknout</Button>
+
       <p className="sign text-gray">
         <i>MaturitniRozbory.cz</i>
       </p>
-      <h1>{book.name}</h1>
+      <h1>
+        {book.name} ({book.released})
+      </h1>
       <h2>{author ? author.name : book.author}</h2>
     </StyledTitle>
   );
