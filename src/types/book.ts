@@ -12,7 +12,7 @@ export interface BookType {
   composition: "Chronologická" | "Retrospektivní" | "Rámcová";
   compositionNote?: string;
 
-  narrator: "Ich" | "Er" | "Lyrický subjekt";
+  narrator: "Ich" | "Er" | "Lyrický subjekt" | "Chybí";
   narratorNote?: string;
   tellingMeans?: string;
   speechType?: string;
