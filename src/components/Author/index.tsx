@@ -43,12 +43,17 @@ const AuthorComponent: React.FC<Props & WithRouterProps> = ({
       </Header>
       <StyledSideCard className="f-right">
         <Card.Content className="text-center">
-          <Image
-            width={200}
-            height={200}
-            src={data ? data.thumbnail.source : ""}
-            alt={name}
-          />
+          {data && data.thumbnail ? (
+            <Image
+              width={200}
+              height={200}
+              src={data.thumbnail.source}
+              alt={name}
+            />
+          ) : (
+            <Image width={200} height={200} src={""} alt={name} />
+          )}
+
           <Card.Header className="mt-1">{name}</Card.Header>
           <Card.Meta>{data && data.description}</Card.Meta>
           <small>
