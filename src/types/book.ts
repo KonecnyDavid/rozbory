@@ -9,7 +9,7 @@ export interface BookType {
   theme: string;
   motives: string;
   timespace: string;
-  composition: "Chronologická" | "Retrospektivní" | "Rámcová";
+  composition: "Chronologická" | "Retrospektivní" | "Rámcová" | "Roztříštěná";
   compositionNote?: string;
 
   narrator: "Ich" | "Er" | "Lyrický subjekt" | "Chybí";
