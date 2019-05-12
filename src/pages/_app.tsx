@@ -45,21 +45,6 @@ class App extends NextApp {
         <Container>
           <Menu secondary pointing>
             <Header />
-            <Menu.Item>
-              <Link href="/">
-                <a>Rozbory</a>
-              </Link>
-            </Menu.Item>
-            <Menu.Item>
-              <Link href="/autori">
-                <a>Autoři</a>
-              </Link>
-            </Menu.Item>
-            <Menu.Item>
-              <Link href="/lit-smery">
-                <a>Lit. směry</a>
-              </Link>
-            </Menu.Item>
           </Menu>
           <Grid className="main-content">
             <Row>
