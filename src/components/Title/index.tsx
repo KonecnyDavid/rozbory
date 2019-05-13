@@ -54,7 +54,7 @@ const Title: React.FC<Props> = ({ book }) => {
         <i>MaturitniRozbory.cz</i>
       </p>
       <h1>
-        {book.name} ({book.released})
+        {book.name} {book.released && `(${book.released})`}
       </h1>
       <h2>{author ? author.name : book.author}</h2>
     </StyledTitle>
