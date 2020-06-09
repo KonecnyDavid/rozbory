@@ -45,7 +45,7 @@ const Title: React.FC<Props> = ({ book }) => {
           } | ${book.timespace}`}
         />
       </Head>
-      <Link href="/" passHref>
+      <Link href="/" passHref  as={`${process.env.ASSET_PREFIX}/`}>
         <Button as="a">Zpět</Button>
       </Link>
       <Button basic onClick={() => window.print()}>Tisknout</Button>

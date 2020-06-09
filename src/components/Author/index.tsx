@@ -69,7 +69,7 @@ const AuthorComponent: React.FC<Props & WithRouterProps> = ({
                   {books.length !== 0 &&
                     books.map(b => (
                       <List.Item key={b.meta.file}>
-                        <Link href={"/rozbor/" + b.meta.url}>
+                        <Link href={"/rozbor/" + b.meta.url}  as={`${process.env.ASSET_PREFIX}/rozbor/${b.meta.url}`}>
                           <a>{b.name}</a>
                         </Link>
                       </List.Item>

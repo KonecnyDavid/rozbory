@@ -20,7 +20,7 @@ class Document extends NextDocument<{
     const page = renderPage(App => props =>
       sheet.collectStyles(<App {...props} />)
     );
-    const host = req ? req.headers.host : window.location.host;
+    const host = "https://davidkonecny.eu/rozbory";
     const styleTags = sheet.getStyleElement();
     return {
       ...page,

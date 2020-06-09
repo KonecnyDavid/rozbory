@@ -23,11 +23,11 @@ const Footer: React.FC = () => (
         </Col>
         <Col xs={12} md={4}>
           <span className="f-right">
-            <Link href="/reklama">
+            <Link href="/reklama" as={`${process.env.ASSET_PREFIX}/reklama`}>
               <a>Reklama</a>
             </Link>
             |
-            <Link href="/zdroje">
+            <Link href="/zdroje" as={`${process.env.ASSET_PREFIX}/zdroje`}>
               <a>Zdroje</a>
             </Link>
           </span>

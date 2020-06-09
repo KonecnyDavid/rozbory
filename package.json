@@ -11,7 +11,8 @@
     "meta": "yarn ts-node --project tsconfig.server.json meta.ts",
     "build": "next build src",
     "test": "yarn meta && yarn build",
-    "ci": "yarn test"
+    "ci": "yarn test",
+    "export": "next export src"
   },
   "dependencies": {
     "@babel/core": "^7.4.3",

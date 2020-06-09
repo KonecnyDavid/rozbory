@@ -23,7 +23,7 @@ class Rozbory extends React.Component<{}, State> {
         />
         <div className="mt-1">
           {books.filter(this.filter as any).map(b => (
-            <Link href={"rozbor/" + b.meta.url} key={b.name} prefetch>
+            <Link href={"rozbor/" + b.meta.url} key={b.name} prefetch  as={`${process.env.ASSET_PREFIX}/rozbor/${b.meta.url}`}>
               <a>
                 <Card fluid>
                   <Card.Content>

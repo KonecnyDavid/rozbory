@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Header: React.FC = () => (
   <StyledHeader>
-    <Link href="/" passHref>
+    <Link href="/" passHref  as={`${process.env.ASSET_PREFIX}/`}>
       <StyledHref>
         <Logo />
         <span>MaturitniRozbory.cz</span>
