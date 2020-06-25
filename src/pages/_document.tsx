@@ -42,7 +42,7 @@ class Document extends NextDocument<{
           <meta
             name="og:url"
             property="og:url"
-            content={"https://maturitnirozbory.cz" + this.props.url}
+            content={"https://davidkonecny.eu/rozbory" + this.props.url}
           />
           <link
             rel="stylesheet"

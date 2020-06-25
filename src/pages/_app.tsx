@@ -16,7 +16,7 @@ class App extends NextApp {
     return (
       <>
         <Head>
-          <title>MaturitniRozbory.cz</title>
+          <title>Maturitni Rozbory</title>
           <meta
             name="description"
             content="Projekt MaturitníRozbory.cz vyznikl za účelem vytvoření jednotného, intuitivního a kvalitního přehledu 
@@ -26,17 +26,17 @@ class App extends NextApp {
           <meta
             name="og:image"
             property="og:image"
-            content="https://maturitnirozbory.cz/static/rozbor/Default.jpg"
+            content="https://davidkonecny.eu/rozbory/rozbor/Default.jpg"
           />
           <meta
             name="og:title"
             property="og:title"
-            content="MaturitniRozbory.cz"
+            content="Maturitni Rozbory"
           />
           <meta
             name="og:description"
             property="og:description"
-            content="Projekt MaturitníRozbory.cz vyznikl za účelem vytvoření jednotného, intuitivního a kvalitního přehledu 
+            content="Projekt Maturitní Rozbory vyznikl za účelem vytvoření jednotného, intuitivního a kvalitního přehledu 
             literárních děl k maturitě a nejen k ní. Veškeré rozbory obsahují všechny potřebné náležitosti ke 
             státní maturitní zkoušce z Českého jazyka."
           />
@@ -52,8 +52,8 @@ class App extends NextApp {
                 <Component {...pageProps} />
               </Col>
               <Col xs={12} md={3} className="sidebar">
-                <Advertisement src="/static/re_img_320x640.png" />
-                <Advertisement src="/static/re_img_320x320.png" />
+                <Advertisement src="https://davidkonecny.eu/rozbory/static/re_img_320x640.png" />
+                <Advertisement src="https://davidkonecny.eu/rozbory/static/re_img_320x320.png" />
               </Col>
             </Row>
           </Grid>
